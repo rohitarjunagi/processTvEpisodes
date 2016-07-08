@@ -6,7 +6,7 @@ An app that takes a list of episodes data and sends it back in a particular form
 
 ```sh
 $ git clone https://github.com/rohitarjunagi/processTvEpisodes.git # or clone your own fork
-$ cd Employee_payslip
+$ cd processTvEpisodes
 $ npm install
 $ npm start
 ```
