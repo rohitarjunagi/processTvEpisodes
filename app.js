@@ -24,6 +24,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(processEpisodesData.setupRoutes());
 
+app.get('/', function(request, response) {
+  response.status(200).send('Please post to this url along with the post data in json format');
+});
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
