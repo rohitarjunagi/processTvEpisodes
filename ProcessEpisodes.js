@@ -117,6 +117,6 @@ payload array are processed.
 */
 ProcessEpisodes.prototype.setupRoutes = function() {
   var router = express.Router();
-  router.post('/processEpisodes', this.processEpisodesData());
+  router.post('/', this.processEpisodesData());
   return router;
 }
