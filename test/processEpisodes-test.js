@@ -53,7 +53,7 @@ describe('Test the ProcessEpisodes library::', function() {
     var expected_response = '{"response":[{"image":"http://mybeautifulcatchupservice.com/img/shows/16KidsandCounting1280.jpg","slug":"show/16kidsandcounting","title":"16 Kids and Counting"},{"image":"http://mybeautifulcatchupservice.com/img/shows/TheTaste1280.jpg","slug":"show/thetaste","title":"The Taste"}]}';
 
     request(app)
-      .post("/processEpisodes")
+      .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
       .expect(201)
@@ -74,7 +74,7 @@ describe('Test the ProcessEpisodes library::', function() {
     var expected_response = '{"error":"Could not decode request: JSON parsing failed"}';
 
     request(app)
-      .post("/processEpisodes")
+      .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
       .expect(400)
@@ -93,7 +93,7 @@ describe('Test the ProcessEpisodes library::', function() {
     var expected_response = '{"error":"Could not decode request: JSON parsing failed"}';
     var input_data = 'invalid json';
     request(app)
-      .post("/processEpisodes")
+      .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
       .expect(400)
@@ -140,7 +140,7 @@ describe('Test the ProcessEpisodes library::', function() {
     };
     var expected_response = '{"error":"Could not decode request: JSON parsing failed"}';
     request(app)
-      .post("/processEpisodes")
+      .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
       .expect(400)
@@ -165,7 +165,7 @@ describe('Test the ProcessEpisodes library::', function() {
     };
     var expected_response = '{"error":"Could not decode request: JSON parsing failed"}';
     request(app)
-      .post("/processEpisodes")
+      .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
       .expect(400)
@@ -213,7 +213,7 @@ describe('Test the ProcessEpisodes library::', function() {
     };;
     var expected_response = '{"response":[{"image":"http://mybeautifulcatchupservice.com/img/shows/16KidsandCounting1280.jpg","slug":"show/16kidsandcounting","title":"16 Kids and Counting"}]}';
     request(app)
-      .post("/processEpisodes")
+      .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
       .expect(201)
@@ -261,7 +261,7 @@ describe('Test the ProcessEpisodes library::', function() {
     };;
     var expected_response = '{"response":[{"image":"http://mybeautifulcatchupservice.com/img/shows/TheTaste1280.jpg","slug":"show/thetaste","title":"The Taste"}]}';
     request(app)
-      .post("/processEpisodes")
+      .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
       .expect(201)
@@ -309,7 +309,7 @@ describe('Test the ProcessEpisodes library::', function() {
     };;
     var expected_response = '{"response":[{"image":"http://mybeautifulcatchupservice.com/img/shows/TheTaste1280.jpg","slug":"show/thetaste","title":"The Taste"}]}';
     request(app)
-      .post("/processEpisodes")
+      .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
       .expect(201)
@@ -357,7 +357,7 @@ describe('Test the ProcessEpisodes library::', function() {
     };;
     var expected_response = '{"response":[{"image":"http://mybeautifulcatchupservice.com/img/shows/TheTaste1280.jpg","slug":"show/thetaste","title":"The Taste"}]}';
     request(app)
-      .post("/processEpisodes")
+      .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
       .expect(201)
@@ -402,7 +402,7 @@ it("If image element is not a present in the episode details, '' is shown in res
     };;
     var expected_response = '{"response":[{"image":"","slug":"show/16kidsandcounting","title":"16 Kids and Counting"},{"image":"http://mybeautifulcatchupservice.com/img/shows/TheTaste1280.jpg","slug":"show/thetaste","title":"The Taste"}]}';
     request(app)
-      .post("/processEpisodes")
+      .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
       .expect(201)
