@@ -18,6 +18,7 @@ ProcessEpisodes.prototype.processEpisodesData = function() {
     validateReqBody(req, function(err) {
       if (err) {
         errorResponse.error = "Could not decode request: JSON parsing failed";
+        res.header("Content-Type", "application/json");
         return res.status(400).send(errorResponse);
       }
       var responseData = {};
@@ -26,9 +27,11 @@ ProcessEpisodes.prototype.processEpisodesData = function() {
       formatResponse(payload, responseArray, function(err) {
         if (err) {
           errorResponse.error = "Could not decode request: JSON parsing failed";
+          res.header("Content-Type", "application/json");
           return res.status(400).send(errorResponse);
         }
         responseData.response = responseArray;
+        res.header("Content-Type", "application/json");
         res.status(200).send(responseData);
       });
 
