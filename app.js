@@ -1,3 +1,4 @@
+//import required modules
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -5,11 +6,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var processEpisodes = require('./ProcessEpisodes');
-
+//grab an instance of express
 var app = express();
-
+//instantiate the processEpisodes Library
 var processEpisodesData = new processEpisodes();
 
+//configure express
 app.set('port', (process.env.PORT || 5000));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
