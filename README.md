@@ -22,7 +22,7 @@ $ npm test
 
 ## Documentation
 
-To use the app, post data to the app on this url: (http://localhost:5000/processEpisodes)
+To use the app, post data to the app on this url: (http://localhost:5000)
 
 
 
