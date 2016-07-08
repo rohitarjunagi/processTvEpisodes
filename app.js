@@ -36,9 +36,17 @@ app.use(function(req, res, next) {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(400).send({
-    "error": "Could not decode request: JSON parsing failed"
-  });
+  if (err.stauts === 400) {
+    res.status(400).send({
+      "error": "Could not decode request: JSON parsing failed"
+    });
+  } else {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: {}
+    });
+  }
 });
 
 //Start the server on a the specified port
