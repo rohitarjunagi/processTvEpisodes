@@ -20,7 +20,7 @@ app.use(function(err, req, res, next) {
 
 describe('Test the ProcessEpisodes library::', function() {
 
-  it("Responds with 201 for the correct episodes data::", function(done) {
+  it("Responds with 200 for the correct episodes data::", function(done) {
     var input_data = {
       "payload": [{
         "country": "UK",
@@ -56,7 +56,7 @@ describe('Test the ProcessEpisodes library::', function() {
       .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
-      .expect(201)
+      .expect(200)
       .end(function(err, res) {
         if (err) return done(err);
 
@@ -216,7 +216,7 @@ describe('Test the ProcessEpisodes library::', function() {
       .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
-      .expect(201)
+      .expect(200)
       .end(function(err, res) {
         if (err) return done(err);
 
@@ -264,7 +264,7 @@ describe('Test the ProcessEpisodes library::', function() {
       .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
-      .expect(201)
+      .expect(200)
       .end(function(err, res) {
         if (err) return done(err);
 
@@ -312,7 +312,7 @@ describe('Test the ProcessEpisodes library::', function() {
       .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
-      .expect(201)
+      .expect(200)
       .end(function(err, res) {
         if (err) return done(err);
 
@@ -360,7 +360,7 @@ describe('Test the ProcessEpisodes library::', function() {
       .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
-      .expect(201)
+      .expect(200)
       .end(function(err, res) {
         if (err) return done(err);
 
@@ -405,7 +405,7 @@ it("If image element is not a present in the episode details, '' is shown in res
       .post("/")
       .set("Content-Type", "application/json")
       .send(input_data)
-      .expect(201)
+      .expect(200)
       .end(function(err, res) {
         if (err) return done(err);
 

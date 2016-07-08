@@ -29,7 +29,7 @@ ProcessEpisodes.prototype.processEpisodesData = function() {
           return res.status(400).send(errorResponse);
         }
         responseData.response = responseArray;
-        res.status(201).send(responseData);
+        res.status(200).send(responseData);
       });
 
     });
